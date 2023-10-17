@@ -2,7 +2,7 @@
 function Slider() {
     return (
         <div>
-            <div className="carousel w-full h-[630px] rounded-box">
+            <div className="carousel w-full h-[630px]">
                 <div id="slide1" className="carousel-item relative w-full ">
                     <div className="hero h-[630px]" style={{ backgroundImage: 'url(https://i.ibb.co/Q8R16YK/cover1.jpg)' }}>
                         <div className="hero-overlay bg-opacity-60"></div>
