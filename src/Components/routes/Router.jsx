@@ -6,6 +6,7 @@ import Error from "../../assets/Error/Error";
 import Home from "../Home/Home";
 import Root from "../Root/Root";
 import AddProduct from "../Products/AddProduct";
+import AddBrand from "../Brand/AddBrand";
 
     const routes = createBrowserRouter([
         {
@@ -15,16 +16,18 @@ import AddProduct from "../Products/AddProduct";
             children: [
                {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader : () => fetch('http://localhost:5000/brand')
                },
                {
                 path: '/add-products',
                 element: <AddProduct></AddProduct>,
                },
-            //    {
-            //     path: '/about',
-            //     element: <About></About>,
-            //    },
+               {
+                path: '/add-brand',
+                element: <AddBrand></AddBrand>,
+                loader : () => fetch('http://localhost:5000/brand')
+               },
             //    {
             //     path: '/eventDetails/:id',
             //     element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
