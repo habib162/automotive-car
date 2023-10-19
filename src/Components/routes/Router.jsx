@@ -5,6 +5,7 @@ import {
 import Error from "../../assets/Error/Error";
 import Home from "../Home/Home";
 import Root from "../Root/Root";
+import AddProduct from "../Products/AddProduct";
 
     const routes = createBrowserRouter([
         {
@@ -16,10 +17,10 @@ import Root from "../Root/Root";
                 path: '/',
                 element: <Home></Home>
                },
-            //    {
-            //     path: '/contact',
-            //     element: <Contact></Contact>,
-            //    },
+               {
+                path: '/add-products',
+                element: <AddProduct></AddProduct>,
+               },
             //    {
             //     path: '/about',
             //     element: <About></About>,

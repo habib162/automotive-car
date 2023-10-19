@@ -38,7 +38,15 @@ const Navbar = () => {
                             >
                                 Home
                             </NavLink></li>
-                        <li><a>Item 3</a></li>
+                            <li>
+                        <NavLink
+                            to="/add-products"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-red-500 underline font-semibold" : ""
+                            }
+                        >
+                            Add Products
+                        </NavLink></li>
                     </ul>
                 </div>
                 <div className="w-10 rounded-full flex gap-2">
@@ -57,7 +65,15 @@ const Navbar = () => {
                         >
                             Home
                         </NavLink></li>
-                    <li><a>Item 3</a></li>
+                        <li>
+                        <NavLink
+                            to="/add-products"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-red-500 underline font-semibold" : ""
+                            }
+                        >
+                            Add Products
+                        </NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">
