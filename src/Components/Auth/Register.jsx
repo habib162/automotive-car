@@ -29,9 +29,26 @@ const Register = () => {
         }else{
             if (email) {
                 registerUser(email,password,name)
+               
                 .then(result => {
+                    const createdAt = result.user?.metadata?.creationTime;
+                    const newUser = {email,password,name,createdAt}
+                    fetch('http://localhost:5000/user', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            toast.success("user registered successfully")
+                        }
+                        
+                    })
                     navigate (location?.state ? location.state : "/");
-                    toast("Registered successfully");
+                   
                 })
                 .catch(error => {toast.error(error)});
             }

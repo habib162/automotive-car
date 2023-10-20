@@ -10,7 +10,7 @@ function SocialLogin() {
     const location = useLocation();
     const navigate = useNavigate();
     const handleSocialLogin = (e) =>{
-        // e.preventDefault();
+        e.preventDefault();
         googleLogin()
 
         .then(res => {
