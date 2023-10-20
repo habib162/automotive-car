@@ -16,7 +16,7 @@ const Home = () => {
            
             <Carlist></Carlist>
             {
-                loadedBrand.map(brand =>  <BrandDetails key={brand._id}></BrandDetails>)
+                loadedBrand.map(brand => <BrandDetails key={brand._id} brand={brand}></BrandDetails>)
             }
             </div>
         </div>

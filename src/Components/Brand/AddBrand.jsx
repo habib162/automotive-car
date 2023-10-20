@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 const AddBrand = () => {
     const brands = useLoaderData();
     const [brandlist,setBrandlist] = useState(brands);
+    const [updateBtn,setUpdateBtn] = useState(false);
     const handleBrandAdd = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -11,7 +12,7 @@ const AddBrand = () => {
         const brandImage = form.brandImage.value;
 
         const newBrand = { brandName, brandImage }
-        console.log(newBrand);
+
 
         fetch('http://localhost:5000/brand', {
             method: 'POST',
@@ -21,28 +22,48 @@ const AddBrand = () => {
             body: JSON.stringify(newBrand)
         })
             .then(res => res.json())
-            .then(data => { console.log(data) })
+            .then(data => { 
+                const updateBrand = [...brandlist, data];
+                setBrandlist(updateBrand)
+            })
     }
     const handleBrandDelete = (id) => {
-        fetch(`http://localhost:5000/brand:${id}`,{
+        fetch(`http://localhost:5000/brand/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())
         .then(data=>{
             if (data.deletedCount > 0) {
-               const updatedBrand =  brands.filter(brand => {
-                brand._id != id
-               })
-               console.log(updatedBrand);
-               setBrandlist(updatedBrand);
+                const updatedBrand = brandlist.filter(brand => brand._id !== id);
+                setBrandlist(updatedBrand);
+                console.log('ok', updatedBrand);
             }
-        
         })
+    }
+
+    const handleUpdate = (id) => {
+
+        const brandToUpdate = brandlist.find(brand => brand._id === id);
+        const form = document.querySelector('form');
+        form.brandName.value = brandToUpdate.brandName;
+        form.brandImage.value = brandToUpdate.brandImage;
+        setUpdateBtn(true);
+        // fetch(`http://localhost:5000/brand/${id}`,{
+        //     method: 'PUT'
+        // })
+        // .then(res => res.json())
+        // .then(data=> console.log(data))
+    };
+    const handleBrandUpdate = (e) => {
+        e.preventDefault();
+        console.log(id);
     }
     return (
         <div className="flex items-center justify-center h-screen bg-gray-100 gap-6">
             <div className="bg-opacity-40 bg-white bg-blur w-96 p-8 rounded-lg">
-                <form onSubmit={handleBrandAdd}>
+                <form onSubmit={
+                    updateBtn ? () => handleBrandUpdate(id)
+                    : handleBrandAdd}>
                     <div className="mb-6">
                         <label htmlFor="brandName" className="block text-gray-700 text-sm font-bold mb-2">Brand Name</label>
                         <input
@@ -67,14 +88,13 @@ const AddBrand = () => {
                         type="submit"
                         className="w-full bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:shadow-outline"
                     >
-                        Add Brand
+                        {updateBtn ? "Update Brand":"Add Brand"}
                     </button>
                 </form>
             </div>
             {
                 brandlist &&  <div className="overflow-x-auto">
                 <table className="table">
-                    {/* head */}
                     <thead>
                         <tr>
                             <th>Image</th>
@@ -85,7 +105,8 @@ const AddBrand = () => {
                     </thead>
                     <tbody>
                     {
-                        brandlist.map(brand => <tr key={brand._id}>
+                        brandlist?.map(brand =>
+                         <tr>
                             <td>
                                 <div className="flex items-center space-x-3">
                                     <div className="avatar">
@@ -98,6 +119,7 @@ const AddBrand = () => {
                             <td>{brand.brandName}</td>
                             <th>
                                 <button className="btn btn-ghost btn-xs" onClick={() => handleBrandDelete(brand._id)}>X</button>
+                                <button className="btn btn-ghost btn-xs" onClick={() => handleUpdate(brand._id)}>Update</button>
                             </th>
                         </tr>)
                     }
