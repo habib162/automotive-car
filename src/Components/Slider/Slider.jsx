@@ -8,7 +8,7 @@ function Slider() {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Welcoming Love's Tiniest Miracle</h1>
+                                <h1 className="mb-5 text-5xl font-bold">The Ultimate Driving Machine</h1>
                                 <p className="mb-5">Where dreams of parenthood bloom and joy overflows.</p>
                             </div>
                         </div>
@@ -23,7 +23,7 @@ function Slider() {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Celebrate Life's Sweet Moments</h1>
+                                <h1 className="mb-5 text-5xl font-bold">The Power of Dreams</h1>
                                 <p className="mb-5">Where joy, laughter, and memories come together.</p>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ function Slider() {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-md">
-                                <h1 className="mb-5 text-5xl font-bold">Embrace Forever Together</h1>
+                                <h1 className="mb-5 text-5xl font-bold">Drive Safe, Arrive Safe</h1>
                                 <p className="mb-5">Where two hearts unite in love and commitment.</p>
                             </div>
                         </div>

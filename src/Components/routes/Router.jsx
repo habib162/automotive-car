@@ -14,6 +14,7 @@ import Register from "../Auth/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CarDetails from "../Cars/CarDetails";
 import BrandWiseCarList from "../Cars/BrandWiseCarList";
+import MyCart from "../MyCart/MyCart";
 
     const routes = createBrowserRouter([
         {
@@ -50,6 +51,11 @@ import BrandWiseCarList from "../Cars/BrandWiseCarList";
                 path: '/carDetails/:id',
                 element: <PrivateRoute><CarDetails></CarDetails></PrivateRoute>,
                 loader : ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+               },
+               {
+                path: '/my-cart',
+                element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
+                loader : () => fetch('http://localhost:5000/my-cart')
                },
                {
                 path: '/brandWisecarList/:id',
