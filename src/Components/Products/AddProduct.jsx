@@ -1,6 +1,7 @@
 
 import { toast } from "react-toastify";
 import ProductMenu from "./productMenu";
+import { useEffect, useState } from "react";
 
 const AddProduct = () => {
     const handleAddProduct = (e) => {
@@ -31,6 +32,15 @@ const AddProduct = () => {
             })
 
     }
+
+    const [brandId, setBrandId] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/brand')
+            .then(res => res.json())
+            .then(data => setBrandId(data))
+            .catch(error => console.error("Error fetching brand id:", error));
+    }, []);
     return (
         <div className="grid grid-cols-5 bg-gray-100">
             <div className="my-12 ml-6">
@@ -50,13 +60,22 @@ const AddProduct = () => {
                                 />
                             </div>
                             <div className="mb-6 col-span-2 md:col-span-1">
-                                <label htmlFor="brand_name" className="text-gray-700 text-sm font-bold mb-2">Brand Name</label>
-                                <input
+                                <label htmlFor="brand_name" className="text-gray-700 text-sm font-bold mb-2">Select Brand</label>
+                                {/* <input
                                     type="text"
                                     name="brand_name"
                                     placeholder="Brand Name"
                                     className="w-full bg-gray-100 border-2 border-gray-300 focus:outline-none focus:border-indigo-500 rounded-md py-2 px-4  appearance-none leading-normal" required
-                                />
+                                /> */}
+                                <select
+                                    name="brand_name"
+                                    className="w-full bg-gray-100 border-2 border-gray-300 focus:outline-none focus:border-indigo-500 rounded-md py-2 px-4  appearance-none leading-normal"
+                                    required
+                                >
+                                    {brandId.map((brand, index) => (
+                                        <option key={index} value={brand._id}>{brand.brandName}</option>
+                                    ))}
+                                </select>
                             </div>
                             <div className="mb-6 col-span-2 md:col-span-1">
                                 <label htmlFor="type" className="text-gray-700 text-sm font-bold mb-2">Product Type</label>
