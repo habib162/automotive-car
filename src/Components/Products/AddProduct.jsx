@@ -1,5 +1,5 @@
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import ProductMenu from "./productMenu";
 
 const AddProduct = () => {
@@ -117,7 +117,6 @@ const AddProduct = () => {
                         >
                             Add Product
                         </button>
-                        <ToastContainer />
                     </form>
                 </div>
             </div>

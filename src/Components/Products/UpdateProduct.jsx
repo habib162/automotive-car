@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import ProductMenu from "./productMenu";
+import { toast } from "react-toastify";
 
 const UpdateProduct = () => {
     const product = useLoaderData();
@@ -125,7 +126,7 @@ const UpdateProduct = () => {
                         type="submit"
                         className="w-full bg-indigo-500 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:shadow-outline"
                     >
-                        Add Product
+                        Update Product
                     </button>
                 </form>
             </div>
