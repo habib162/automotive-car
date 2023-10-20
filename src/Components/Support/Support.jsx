@@ -4,7 +4,7 @@ import { AiFillCar } from "react-icons/ai";
 
 const Support = () => {
     return (
-        <div className="w-full bg-slate-50 my-8">
+        <div className="w-full  my-8">
             <div><p className="py-8 mx-10">Why Us___</p></div>
             <div className="grid grid-cols-2 md:grid-cols-3  gap-y-10 p-8 rounded-lg gap-4">
                 <div className="flex items-center gap-x-3 border rounded-lg p-4 bg-slate-100 w-full h-[120px]">
@@ -21,7 +21,7 @@ const Support = () => {
                         <GiAutoRepair className="w-12 h-12"></GiAutoRepair>
                         <div>
                         <p className="font-semibold">Unlimited Repair Warranty</p>
-                        <p>We have dedicated support</p>
+                        <p>Peace of Mind, Guaranteed. Our Unlimited Repair Warranty.</p>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ const Support = () => {
                         <AiFillCar className="w-12 h-12"></AiFillCar>
                         <div>
                         <p className="font-semibold">Largest Dealership of Cars</p>
-                        <p>We have dedicated support</p>
+                        <p>Where Choices Drive You. Largest Car Dealership in Town.</p>
                         </div>
                     </div>
                 </div>

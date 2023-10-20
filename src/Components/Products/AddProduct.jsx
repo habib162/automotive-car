@@ -42,11 +42,11 @@ const AddProduct = () => {
             .catch(error => console.error("Error fetching brand id:", error));
     }, []);
     return (
-        <div className="grid grid-cols-5 bg-gray-100">
+        <div className="grid grid-cols-5">
             <div className="my-12 ml-6">
                 <ProductMenu></ProductMenu>
             </div>
-            <div className="flex items-center justify-center min-h-screen bg-gray-100 col-span-4">
+            <div className="flex items-center justify-center min-h-screen  col-span-4">
                 <div className="bg-opacity-40 bg-white bg-blur w-[50%] p-8 rounded-md py-10">
                     <form onSubmit={handleAddProduct}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

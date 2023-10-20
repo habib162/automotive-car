@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const CarDetails = () => {
     const product = useLoaderData();
-    const { _id, productName, brand_name, image, price, description } = product;
+    const { _id, productName, type, image, price, description } = product;
     const handleMyCart = (id) => {
         const newData = { productId: id, productName, price };
         console.log(newData);
@@ -31,7 +31,7 @@ const CarDetails = () => {
                     <div>
                         <h1 className="text-5xl font-bold">{productName}</h1>
                         <p className="py-3">{description}</p>
-                        <p>{brand_name}</p>
+                        <p>{type}</p>
                         <p>{price}</p>
                         <button className="btn btn-primary rounded-md bg-red-400 text-white border-none btn-sm hover:bg-red-500" onClick={() => handleMyCart(_id)}>Add To Card</button>
                     </div>

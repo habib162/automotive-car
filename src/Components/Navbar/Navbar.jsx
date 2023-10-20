@@ -47,7 +47,7 @@ const Navbar = () => {
                 loading ? <div className='text-center text-3xl'>
                     <span className="loading loading-spinner text-success"></span>
                 </div> :
-                    <div className="navbar bg-base-100 py-4 shadow-lg px-4 sm:px-8">
+                    <div className="navbar bg-base-100 py-4 shadow-lg px-4 sm:px-8 h-[100px]">
                         <div className="navbar-start">
                             <div className="dropdown">
                                 <label tabIndex={0} className="btn btn-ghost lg:hidden">

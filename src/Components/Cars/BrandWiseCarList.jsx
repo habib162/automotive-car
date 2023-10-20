@@ -3,25 +3,26 @@ import { Link, useParams } from "react-router-dom";
 
 const BrandWiseCarList = () => {
     const { id } = useParams();
-    const [products, setProducts] = useState([]);
     const [FiltePproducts, setFiltePproducts] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/product')
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => 
+               { 
+                const productFilter = data.filter(product => product.brand_name === id);
+                setFiltePproducts(productFilter);}
+                )
             .catch(error => console.error("Error fetching brand id:", error));
 
-        const productFilter = products.filter(product => product.brand_name === id);
-        console.log(productFilter);
-        setFiltePproducts(productFilter);
+       
     }, []);
 
 
     return (
 
-        <div className="py-5">
-            <p className="text-2xl font-bold text-center py-2">All Brand Wise Cars</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="py-5 min-h-screen">
+            <p className="text-2xl font-bold text-center py-2"> Brand Wise Cars List</p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {
                     FiltePproducts ? FiltePproducts.map((product, index) => (
                         <div className="py-4" key={index}>

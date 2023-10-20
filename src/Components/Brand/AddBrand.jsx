@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-
+import {  AiFillDelete } from "react-icons/ai";
 const AddBrand = () => {
     const brands = useLoaderData();
     const [brandlist,setBrandlist] = useState(brands);
@@ -59,7 +59,7 @@ const AddBrand = () => {
         console.log(id);
     }
     return (
-        <div className="flex items-center justify-center h-screen bg-gray-100 gap-6">
+        <div className="flex items-center justify-center min-h-screen gap-6">
             <div className="bg-opacity-40 bg-white bg-blur w-96 p-8 rounded-lg">
                 <form onSubmit={
                     updateBtn ? () => handleBrandUpdate(id)
@@ -118,8 +118,7 @@ const AddBrand = () => {
                             </td>
                             <td>{brand.brandName}</td>
                             <th>
-                                <button className="btn btn-ghost btn-xs" onClick={() => handleBrandDelete(brand._id)}>X</button>
-                                <button className="btn btn-ghost btn-xs" onClick={() => handleUpdate(brand._id)}>Update</button>
+                                <button className="btn btn-ghost btn-md" onClick={() => handleBrandDelete(brand._id)}><AiFillDelete></AiFillDelete></button>
                             </th>
                         </tr>)
                     }
