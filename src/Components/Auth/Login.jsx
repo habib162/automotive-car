@@ -1,23 +1,43 @@
+import { Link } from "react-router-dom";
+
 const Login = () => {
     return (
         <div>
-            <form>
-                {/* <label class="block">
-                    <span class="block text-sm font-medium text-slate-700">Username</span>
-                    <input type="text" value="tbone" disabled class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
-                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
-                        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
-                        invalid:border-pink-500 invalid:text-pink-600
-                        focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-                        "/>
-                </label> */}
-                <label class="block">
-                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                        Email
-                    </span>
-                    <input type="email" name="email" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="you@example.com" />
-                </label>
-            </form>
+            <div className="flex items-center justify-center min-h-screen bg-gray-100 shadow-md">
+                <div className="bg-opacity-40 bg-white bg-blur w-[25%] p-8 rounded-md py-10">
+                    <form >
+                        <div className="mb-6 col-span-2 md:col-span-1">
+                            <label htmlFor="email" className="text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Enter Email"
+                                className="w-full bg-gray-100 border-2 border-gray-300 focus:outline-none focus:border-indigo-500 rounded-md py-2 px-4  appearance-none leading-normal" required
+                            />
+                        </div>
+                        <div className="mb-6 col-span-2 md:col-span-1">
+                            <label htmlFor="password" className="text-gray-700 text-sm font-bold mb-2">Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="Enter Password"
+                                className="w-full bg-gray-100 border-2 border-gray-300 focus:outline-none focus:border-indigo-500 rounded-md py-2 px-4  appearance-none leading-normal" required
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="w-full bg-indigo-500 text-white font-bold py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:shadow-outline"
+                        >
+                           Sign In
+                        </button>
+                    </form>
+                    <br/>
+                    <label className='label mx-auto'>
+                        Don't have an account ?<Link to="/register" className='label-text-alt link link-hover'> Register Here</Link>
+                    </label>
+                </div>
+            </div>
         </div>
     );
 }

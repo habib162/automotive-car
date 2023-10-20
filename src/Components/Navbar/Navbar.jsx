@@ -56,6 +56,15 @@ const Navbar = () => {
                         >
                             Add Brand
                         </NavLink></li>
+                        <li>
+                        <NavLink
+                            to="/login"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-red-500 underline font-semibold" : ""
+                            }
+                        >
+                            Login
+                        </NavLink></li>
                     </ul>
                 </div>
                 <div className="w-10 rounded-full flex gap-2">
@@ -91,6 +100,15 @@ const Navbar = () => {
                             }
                         >
                             Add Brand
+                        </NavLink></li>
+                        <li>
+                        <NavLink
+                            to="/login"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-red-500 underline font-semibold" : ""
+                            }
+                        >
+                            Login
                         </NavLink></li>
                 </ul>
             </div>

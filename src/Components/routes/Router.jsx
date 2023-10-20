@@ -9,6 +9,8 @@ import AddProduct from "../Products/AddProduct";
 import AddBrand from "../Brand/AddBrand";
 import ProductList from "../Products/ProductList";
 import UpdateProduct from "../Products/UpdateProduct";
+import Login from "../Auth/Login";
+import Register from "../Auth/Register";
 
     const routes = createBrowserRouter([
         {
@@ -19,7 +21,7 @@ import UpdateProduct from "../Products/UpdateProduct";
                {
                 path: '/',
                 element: <Home></Home>,
-                loader : () => fetch('http://localhost:5000/brand')
+                loader : () => fetch('http://localhost:5000/product')
                },
                {
                 path: '/add-products',
@@ -46,14 +48,14 @@ import UpdateProduct from "../Products/UpdateProduct";
             //     element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
             //     loader: () => fetch('/socialEvents.json')
             //    },
-            //    {
-            //     path: '/login',
-            //     element: <Login></Login>
-            //    },
-            //    {
-            //     path: '/register',
-            //     element: <Register></Register>
-            //    }
+               {
+                path: '/login',
+                element: <Login></Login>
+               },
+               {
+                path: '/register',
+                element: <Register></Register>
+               }
             ]
         }
     ]);
