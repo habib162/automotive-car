@@ -1,11 +1,35 @@
-import { Link } from "react-router-dom";
+
+import SocialLogin from "./SocialLogin";
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import {  toast } from 'react-toastify';
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
+ const {signIn} = useContext(AuthContext);
+ const location = useLocation();
+ const navigate = useNavigate();
+const handleSubmit = (e) =>{
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    if (email && password) {
+        signIn(email,password) 
+        .then(result => {
+            navigate (location?.state ? location.state : "/");
+            toast("Logged in successfully");
+        })
+        .catch(error => {
+         toast.error("Email or Password invalid")})
+    }
+
+}
     return (
         <div>
             <div className="flex items-center justify-center min-h-screen bg-gray-100 shadow-md">
                 <div className="bg-opacity-40 bg-white bg-blur w-[25%] p-8 rounded-md py-10">
-                    <form >
+                <SocialLogin></SocialLogin>
+                    <form onSubmit={handleSubmit}>
                         <div className="mb-6 col-span-2 md:col-span-1">
                             <label htmlFor="email" className="text-gray-700 text-sm font-bold mb-2">Email</label>
                             <input

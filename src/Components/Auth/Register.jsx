@@ -1,11 +1,48 @@
-import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
+
+    
+    const {registerUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const regex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-]).{6,}$/;
+
+        if (!regex.test(password)) {
+            if (password.length < 6) {
+                toast.error("Password is less than 6 characters");
+            }
+            else if (!/[A-Z]/.test(password)) {
+                toast.error("Don't have capital letter");
+            }
+            else if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(password)) {
+                toast.error("Don't have Special Character");
+            }
+        }else{
+            if (email) {
+                registerUser(email,password,name)
+                .then(result => {
+                    navigate (location?.state ? location.state : "/");
+                    toast("Registered successfully");
+                })
+                .catch(error => {toast.error(error)});
+            }
+
+        }
+    }
     return (
         <div>
         <div className="flex items-center justify-center min-h-screen bg-gray-100 shadow-md">
             <div className="bg-opacity-40 bg-white bg-blur w-[25%] p-8 rounded-md py-10">
-                <form >
+                <form onSubmit={handleSubmit}>
                     <div className="mb-6 col-span-2 md:col-span-1">
                         <label htmlFor="name" className="text-gray-700 text-sm font-bold mb-2">Full Name</label>
                         <input
