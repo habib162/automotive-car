@@ -15,6 +15,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import CarDetails from "../Cars/CarDetails";
 import BrandWiseCarList from "../Cars/BrandWiseCarList";
 import MyCart from "../MyCart/MyCart";
+import Contact from "../Contact/Contact";
 
     const routes = createBrowserRouter([
         {
@@ -68,6 +69,10 @@ import MyCart from "../MyCart/MyCart";
                {
                 path: '/register',
                 element: <Register></Register>
+               },
+               {
+                path: '/contact',
+                element: <Contact></Contact>
                }
             ]
         }

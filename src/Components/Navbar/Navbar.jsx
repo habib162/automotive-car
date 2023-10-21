@@ -91,6 +91,15 @@ const Navbar = () => {
                                     >
                                        My Cart
                                     </NavLink></li>
+                                    <li>
+                                    <NavLink
+                                        to="/contact"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-red-500 underline font-semibold" : ""
+                                        }
+                                    >
+                                      Contact Us
+                                    </NavLink></li>
                                 </ul>
                             </div>
                             <div className="w-10 rounded-full flex gap-2">
@@ -135,6 +144,15 @@ const Navbar = () => {
                                         }
                                     >
                                        My Cart
+                                    </NavLink></li>
+                                    <li>
+                                    <NavLink
+                                        to="/contact"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-red-500 underline font-semibold" : ""
+                                        }
+                                    >
+                                       Contact
                                     </NavLink></li>
                             </ul>
                         </div>
@@ -181,7 +199,7 @@ const Navbar = () => {
                                         checked={theme === "light" ? false : true}
                                     />
                                     <img src={sun} alt="light" className="w-8 h-8 swap-on" />
-                                    <img src={moon} alt="dark" className="w-8 h-8 swap-off" />
+                                    <img src={moon} alt="dark" className="w-6 h-6 swap-off" />
                                 </label>
                             </button>
                         </div>

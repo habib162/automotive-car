@@ -26,8 +26,8 @@ const handleSubmit = (e) =>{
 }
     return (
         <div>
-            <div className="flex items-center justify-center min-h-screen bg-gray-100 shadow-md">
-                <div className="bg-opacity-40 bg-white bg-blur w-[25%] p-8 rounded-md py-10">
+            <div className="flex items-center justify-center min-h-screen shadow-lg">
+                <div className=" bg-base-200 bg-blur w-[25%] p-8 rounded-md py-10">
                 <SocialLogin></SocialLogin>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-6 col-span-2 md:col-span-1">

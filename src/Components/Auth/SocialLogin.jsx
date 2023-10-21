@@ -24,7 +24,7 @@ function SocialLogin() {
         <div>
             <div className='divider font-bold'>Continue With</div>
             <div className='text-center py-3'>
-                <button className='btn btn-primary btn-circle btn-outline' onClick={handleSocialLogin}><FcGoogle></FcGoogle></button>
+                <button className='btn btn-primary btn-circle btn-dar-outline bg-white' onClick={handleSocialLogin}><FcGoogle></FcGoogle></button>
             </div>
             <div className='divider font-bold'>Or</div>
         </div>

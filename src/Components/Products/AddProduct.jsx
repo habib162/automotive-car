@@ -27,8 +27,6 @@ const AddProduct = () => {
             .then(data => {
                 console.log(data);
                 toast.success("product inserted successfully")
-                // const updateBrand = [...brandlist, data];
-                // setBrandlist(updateBrand)
             })
 
     }
