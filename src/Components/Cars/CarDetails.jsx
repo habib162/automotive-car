@@ -28,11 +28,11 @@ const CarDetails = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
-                    <div>
+                    <div className="ml-3">
                         <h1 className="text-5xl font-bold">{productName}</h1>
                         <p className="py-3">{description}</p>
-                        <p>{type}</p>
-                        <p>{price}</p>
+                        <p className="text-3xl mb-3">Category: {type}</p>
+                        <p className="text-3xl mb-3 font-semibold">Price: {price}$</p>
                         <button className="btn btn-primary rounded-md bg-red-400 text-white border-none btn-sm hover:bg-red-500" onClick={() => handleMyCart(_id)}>Add To Card</button>
                     </div>
                 </div>

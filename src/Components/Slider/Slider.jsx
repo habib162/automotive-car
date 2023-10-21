@@ -10,6 +10,7 @@ function Slider() {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">The Ultimate Driving Machine</h1>
                                 <p className="mb-5">Where Choices Drive You. Largest Car Dealership in Town.</p>
+                                <button className="btn btn-primary rounded-sm bg-red-400 text-white border-none  hover:bg-red-500">Explore More</button>
                             </div>
                         </div>
                     </div>
@@ -25,6 +26,7 @@ function Slider() {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">The Power of Dreams</h1>
                                 <p className="mb-5">Experience the Power of Selection. Your Largest Car Dealership</p>
+                                <button className="btn btn-primary rounded-sm bg-red-400 text-white border-none  hover:bg-red-500">Explore More</button>
                             </div>
                         </div>
                     </div>
@@ -40,6 +42,7 @@ function Slider() {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-bold">Drive Safe, Arrive Safe</h1>
                                 <p className="mb-5">Experience the Power of Selection. Your Largest Car Dealership</p>
+                                <button className="btn btn-primary rounded-sm bg-red-400 text-white border-none  hover:bg-red-500">Explore More</button>
                             </div>
                         </div>
                     </div>
