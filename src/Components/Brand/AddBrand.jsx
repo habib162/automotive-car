@@ -14,7 +14,7 @@ const AddBrand = () => {
         const newBrand = { brandName, brandImage }
 
 
-        fetch('https://automotive-server-side-ksc9idnd4.vercel.app/brand', {
+        fetch('https://automotive-server-side-k18r81qfz.vercel.app/brand', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -28,7 +28,7 @@ const AddBrand = () => {
             })
     }
     const handleBrandDelete = (id) => {
-        fetch(`https://automotive-server-side-ksc9idnd4.vercel.app/brand/${id}`,{
+        fetch(`https://automotive-server-side-k18r81qfz.vercel.app/brand/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())
@@ -48,7 +48,7 @@ const AddBrand = () => {
         form.brandName.value = brandToUpdate.brandName;
         form.brandImage.value = brandToUpdate.brandImage;
         setUpdateBtn(true);
-        // fetch(`https://automotive-server-side-ksc9idnd4.vercel.app/brand/${id}`,{
+        // fetch(`https://automotive-server-side-k18r81qfz.vercel.app/brand/${id}`,{
         //     method: 'PUT'
         // })
         // .then(res => res.json())

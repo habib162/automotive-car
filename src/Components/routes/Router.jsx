@@ -26,37 +26,37 @@ import Contact from "../Contact/Contact";
                {
                 path: '/',
                 element: <Home></Home>,
-                loader : () => fetch('https://automotive-server-side-ksc9idnd4.vercel.app/product')
+                loader : () => fetch('https://automotive-server-side-k18r81qfz.vercel.app/product')
                },
                {
                 path: '/add-products',
                 element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
-                loader : () => fetch('https://automotive-server-side-ksc9idnd4.vercel.app/product')
+                loader : () => fetch('https://automotive-server-side-k18r81qfz.vercel.app/product')
                },
                {
                 path: '/product-list',
                 element: <PrivateRoute><ProductList></ProductList></PrivateRoute>,
-                loader : () => fetch('https://automotive-server-side-ksc9idnd4.vercel.app/product')
+                loader : () => fetch('https://automotive-server-side-k18r81qfz.vercel.app/product')
                },
                {
                 path: '/update-product/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader : ({params}) => fetch(`https://automotive-server-side-ksc9idnd4.vercel.app/product/${params.id}`)
+                loader : ({params}) => fetch(`https://automotive-server-side-k18r81qfz.vercel.app/product/${params.id}`)
                },
                {
                 path: '/add-brand',
                 element: <PrivateRoute><AddBrand></AddBrand></PrivateRoute>,
-                loader : () => fetch('https://automotive-server-side-ksc9idnd4.vercel.app/brand')
+                loader : () => fetch('https://automotive-server-side-k18r81qfz.vercel.app/brand')
                },
                {
                 path: '/carDetails/:id',
                 element: <PrivateRoute><CarDetails></CarDetails></PrivateRoute>,
-                loader : ({params}) => fetch(`https://automotive-server-side-ksc9idnd4.vercel.app/product/${params.id}`)
+                loader : ({params}) => fetch(`https://automotive-server-side-k18r81qfz.vercel.app/product/${params.id}`)
                },
                {
                 path: '/my-cart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader : () => fetch('https://automotive-server-side-ksc9idnd4.vercel.app/my-cart')
+                loader : () => fetch('https://automotive-server-side-k18r81qfz.vercel.app/my-cart')
                },
                {
                 path: '/brandWisecarList/:id',

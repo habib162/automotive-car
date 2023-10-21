@@ -11,7 +11,7 @@ const Contact = () => {
 
         const newContact = {name, email, message};
 
-        fetch('https://automotive-server-side-ksc9idnd4.vercel.app/contact',{
+        fetch('https://automotive-server-side-k18r81qfz.vercel.app/contact',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
