@@ -50,24 +50,3 @@ const BrandWiseCarList = () => {
 }
 
 export default BrandWiseCarList;
-
-
-// const brandWiseCarList = () => {
-//     const { brandId } = useParams();
-//     console.log(brandId);
-//     // const [product,setProduct] = useState([]);
-
-//     // useEffect(() => {
-//     //     effect
-//     //     return () => {
-//     //         cleanup
-//     //     }
-//     // }, [])
-//     return (
-//         <div>
-
-//         </div>
-//     );
-// }
-
-// export default brandWiseCarList;
