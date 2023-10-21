@@ -11,7 +11,7 @@ const Contact = () => {
 
         const newContact = {name, email, message};
 
-        fetch('http://localhost:5000/contact',{
+        fetch('https://automotive-server-side-ksc9idnd4.vercel.app/contact',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

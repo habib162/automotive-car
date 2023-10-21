@@ -19,7 +19,7 @@ const UpdateProduct = () => {
         const rating = form.rating.value;
 
         const updatedProduct = { productName, brand_name, type, price, description, image, rating };
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://automotive-server-side-ksc9idnd4.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const UpdateProduct = () => {
     console.log(brandId);
     const [brandList, setBrandList] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/brand')
+        fetch('https://automotive-server-side-ksc9idnd4.vercel.app/brand')
             .then(res => res.json())
             .then(data => setBrandList(data))
             .catch(error => console.error("Error fetching brand id:", error));

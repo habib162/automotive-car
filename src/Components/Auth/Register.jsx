@@ -34,7 +34,7 @@ const Register = () => {
                     .then(result => {
                         const createdAt = result.user?.metadata?.creationTime;
                         const newUser = { email, password, name, createdAt }
-                        fetch('http://localhost:5000/user', {
+                        fetch('https://automotive-server-side-ksc9idnd4.vercel.app/user', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

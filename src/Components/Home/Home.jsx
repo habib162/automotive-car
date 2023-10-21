@@ -12,7 +12,7 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const brandResponse = await fetch('http://localhost:5000/brand');
+            const brandResponse = await fetch('https://automotive-server-side-ksc9idnd4.vercel.app/brand');
             const brandJson = await brandResponse.json();
             setBrandData(brandJson);
           } catch (error) {

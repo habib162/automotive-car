@@ -5,7 +5,7 @@ const BrandWiseCarList = () => {
     const { id } = useParams();
     const [FiltePproducts, setFiltePproducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://automotive-server-side-ksc9idnd4.vercel.app/product')
             .then(res => res.json())
             .then(data => {
                 const productFilter = data.filter(product => product.brand_name === id);
