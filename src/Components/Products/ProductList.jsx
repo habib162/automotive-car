@@ -18,7 +18,7 @@ const ProductList = () => {
             confirmButtonText: 'yes, delete it!',
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://automotive-server-side-k18r81qfz.vercel.app/product/${id}`, {
+                fetch(`https://b8a10-brandshop-server-side-habib162.vercel.app/product/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

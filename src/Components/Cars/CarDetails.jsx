@@ -7,7 +7,7 @@ const CarDetails = () => {
     const handleMyCart = (id) => {
         const newData = { productId: id, productName, price };
         console.log(newData);
-        fetch('https://automotive-server-side-k18r81qfz.vercel.app/my-cart', {
+        fetch('https://b8a10-brandshop-server-side-habib162.vercel.app/my-cart', {
             method: 'POST',
 
             headers: {
